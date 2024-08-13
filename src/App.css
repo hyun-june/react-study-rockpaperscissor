@@ -1,30 +1,130 @@
+.container{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: #dfd3c3;
+}
+
+.gameSection{
+  text-align: center;
+  margin-top: 4%;
+  width: 55%;
+  height: 80%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  background-color: white;
+  border-radius: 50px;
+}
+
+.scoreBoard{
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.score{
+  font-size: 50px;
+}
+
+@keyframes game {
+  0% { color: red; }
+  50% { color: black; }
+  100% { color: red; }
+}
+
+.gameResult {
+  font-size: 50px;
+  position: absolute;
+  right: 1rem;
+  animation: game 1s infinite;
+}
+
 .main{
   display: flex;
   justify-content: center;
+  margin-bottom: 2rem;
 }
 
 .box{
-  border: 1px solid black;
+  border-top: 2px dashed lightgray;
+  border-bottom: 2px dashed lightgray;
   width: 500px;
   text-align: center;
+  position: relative;
 }
 
-.item-img{
-  width: 400px;
-  height: 300px;
+.box.User::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0; /* 전체 높이를 설정하여 점선이 박스 전체를 커버하도록 함 */
+  right: 0; /* 좌측에 위치시키기 위해 */
+  width: 2px; /* 점선의 두께를 설정 */
+  border-left: 2px dashed lightgray; /* 점선 효과를 설정 */
+}
+
+.item-icon{
+  font-size: 200px;
+  text-align: center;
+  color: black;
 }
 
 .win{
-  border:  10px solid green;
   color: green;
 }
 
 .lose{
-  border:  10px solid red;
   color: red;
 }
 
 .tie{
-  border:  10px solid black;
   color: black;
+}
+
+.btn{
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border: none;
+  border-radius: 20px;
+  border: 1px solid lightgray;
+  transition-duration: 0.3s;
+  margin: 1rem;
+  font-size: 50px;
+}
+
+.btn:active{
+  margin-right: 5px;
+  transform: translateY(3px);
+  box-shadow: none;
+}
+
+.scissors{
+  box-shadow: 5px 5px 5px green;
+}
+
+.rock{
+  box-shadow: 5px 5px 5px blue;
+}
+
+.paper{
+  box-shadow: 5px 5px 5px #f05650;
+}
+
+.btn-reset{
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border: none;
+  border-radius: 20px;
+  border: 1px dashed darksalmon;
+  box-shadow:  3px 3px 3px darksalmon;
+  transition-duration: 0.3s;
+}
+
+.btn-reset:active{
+  transform: translateY(3px);
+  margin-left: 5px;
+  box-shadow: none;
+  background-color: #DB4455;
 }

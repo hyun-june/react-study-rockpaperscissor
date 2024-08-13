@@ -1,11 +1,15 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleUser, faComputer } from '@fortawesome/free-solid-svg-icons'; // 기본 아이콘들
 
 const Box = (props) => {
-    console.log(props)
+  const { item, result, title  } = props;
+  const defaultIcon = title  === "User" ? <FontAwesomeIcon icon={faCircleUser}/> : <FontAwesomeIcon icon={faComputer} />;
+    console.log("item",props)
   return (
-    <div className={`box ${props.result ? props.result : ''}`}>
+    <div className={`box  ${title} ${result ? result : ''}`}>
       <h1>{props.title}</h1>
-      <img className="item-img" src={props.item && props.item.img} alt="" />
+      <div className="item-icon">{item ? item.icon : defaultIcon}</div>
       <h2>{props.result}</h2>
     </div>
   );
