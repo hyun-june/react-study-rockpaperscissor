@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleUser, faComputer } from '@fortawesome/free-solid-svg-icons'; // 기본 아이콘들
+import { faCircleUser, faComputer } from '@fortawesome/free-solid-svg-icons'; 
 
 const Box = (props) => {
   const { item, result, title  } = props;
